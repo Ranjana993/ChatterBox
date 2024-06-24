@@ -1,19 +1,31 @@
 import express from "express"
 import dotenv from "dotenv"
 import authrouter from "./routes/authRoute.js";
+import userRoutes from "./routes/userRoutes.js";
 import connectDB from "./database/dbConnect.js";
 import messageRoutes from "./routes/message.js"
+import cookieParser from 'cookie-parser';
+
+
+
+
 
 
 const app = express();
+const PORT = process.env.PORT || 8000
 dotenv.config()
 
 // middleware
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
+app.use(cookieParser())
+
+
+
 app.use("/api/auth", authrouter)
 app.use("/api/messages" , messageRoutes)
-const PORT = process.env.PORT || 8000
+app.use("/api/users", userRoutes)
+
 
 
 app.get("/", (req, res) => {

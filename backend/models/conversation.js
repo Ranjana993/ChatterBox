@@ -10,10 +10,11 @@ const conversationSchema = new mongoose.Schema({
   messages: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'MesMessagesage',
+      ref: 'Message',
       default:[]
     }
   ]
 }, { timestamps: true })
 
-export default Conversation = new mongoose.model("Conversation", conversationSchema)
+const Conversation = new mongoose.model("Conversation", conversationSchema)
+export default Conversation
