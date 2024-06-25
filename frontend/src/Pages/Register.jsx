@@ -1,3 +1,5 @@
+import GenderCheckbox from "./GenderCheckbox";
+
 const Register = () => {
 	return (
 		<div className='flex flex-col items-center  justify-center min-w-94 w-[90%] mx-auto lg:w-1/2' >
@@ -43,8 +45,8 @@ const Register = () => {
 							className='w-full input input-bordered h-12 bg-opacity-60'
 						/>
 					</div>
-
-					{/* <GenderCheckbox /> */}
+`
+					<GenderCheckbox />
 
 					<a className='text-sm hover:underline hover:text-blue-600 mt-2 inline-block' href='#'>
 						Already have an account?
