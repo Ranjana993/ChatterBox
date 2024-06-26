@@ -5,8 +5,7 @@ import userRoutes from "./routes/userRoutes.js";
 import connectDB from "./database/dbConnect.js";
 import messageRoutes from "./routes/message.js"
 import cookieParser from 'cookie-parser';
-
-
+import cors from "cors"
 
 
 
@@ -18,6 +17,7 @@ dotenv.config()
 // middleware
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
+app.use(cors())
 app.use(cookieParser())
 
 
